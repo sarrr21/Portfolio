@@ -60,6 +60,10 @@ ul {
   list-style: none;
 }
 
+.logo{
+  height: 90px;
+}
+
 a {
   text-decoration: none;
 }
@@ -212,7 +216,10 @@ a {
   color: var(--first-color);
 }
 
-  
+.photo{
+  height: 400px;
+  width: 500px;
+}  
 
 .profile{
   position: absolute;
@@ -248,6 +255,10 @@ a {
 }
 .about__subtitle {
   margin-bottom: var(--mb-2);
+}
+
+.about__text{
+  font-size: var( --normal-font-size);
 }
 .about__img {
   justify-self: center;
@@ -361,6 +372,9 @@ color: var(--first-color);
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   border-radius: 0.5rem;
   overflow: hidden;
+  
+
+  
 }
 .work__img img {
   transition: 1s;

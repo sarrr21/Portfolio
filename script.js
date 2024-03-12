@@ -51,6 +51,49 @@ const sr = ScrollReveal({
 //     reset: true
 });
 
+var contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var nameInput = document.getElementById("name");
+    var emailInput = document.getElementById("email");
+    var messageInput = document.getElementById("message");
+
+    var name = nameInput.value.trim();
+    var email = emailInput.value.trim();
+    var message = messageInput.value.trim();
+
+    var hasEmptyField = false;
+
+    if (name === "") {
+      nameInput.style.borderColor = "red";
+      hasEmptyField = true;
+    } else {
+      nameInput.style.borderColor = "";
+    }
+
+    if (email === "") {
+      emailInput.style.borderColor = "red";
+      hasEmptyField = true;
+    } else {
+      emailInput.style.borderColor = "";
+    }
+
+    if (message === "") {
+      messageInput.style.borderColor = "red";
+      hasEmptyField = true;
+    } else {
+      messageInput.style.borderColor = "";
+    }
+
+    if (hasEmptyField) {
+      return false;
+    }
+
+    contactForm.submit();
+  });
+}
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
