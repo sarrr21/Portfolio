@@ -222,9 +222,9 @@ a {
 }  
 
 .profile{
-  position: absolute;
   height: 400px;
   width: 500px;
+  align-items: center;
   
 }
 .home__blob {
@@ -543,5 +543,35 @@ color: var(--first-color);
   }
   .home__img {
     width: 450px;
+  }
+} 
+@media screen and (max-width: 575px) {
+  /* Adjustments for smaller devices */
+  .nav__menu {
+    width: 100%; 
+  }
+  .nav__toggle {
+    display: block; 
+  }
+  .nav__list {
+    display: none; 
+    flex-direction: column; 
+    background-color: var(--second-color);
+    padding: 2rem; 
+    position: absolute; 
+    top: var(--header-height); 
+    left: 0; 
+    width: 100%; 
+    z-index: var(--z-fixed); 
+    transition: transform 0.5s ease; 
+  }
+  .nav__item {
+    margin: 1rem 0; 
+  }
+  .nav__link {
+    color: #fff; 
+  }
+  .show .nav__list {
+    display: flex; 
   }
 }
