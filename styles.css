@@ -192,6 +192,10 @@ a {
   display: flex;
   gap: 40px;
 }
+.home_to{
+  display: flex;
+  
+}
 .home__data {
   align-self: center;
 }
@@ -222,9 +226,9 @@ a {
 }  
 
 .profile{
+  position: absolute;
   height: 400px;
   width: 500px;
-  align-items: center;
   
 }
 .home__blob {
@@ -543,35 +547,77 @@ color: var(--first-color);
   }
   .home__img {
     width: 450px;
-  }
-} 
-@media screen and (max-width: 575px) {
-  /* Adjustments for smaller devices */
+  } 
+}     
+@media screen and (max-width: 767px) {
+  /* General */
   .nav__menu {
-    width: 100%; 
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
   }
   .nav__toggle {
-    display: block; 
+    display: block;
   }
-  .nav__list {
-    display: none; 
-    flex-direction: column; 
-    background-color: var(--second-color);
-    padding: 2rem; 
-    position: absolute; 
-    top: var(--header-height); 
-    left: 0; 
-    width: 100%; 
-    z-index: var(--z-fixed); 
-    transition: transform 0.5s ease; 
+.profile{
+  order: 1;
+  
+  
+}
+  /* Home */
+  .home_to {
+    flex-direction: column-reverse; /* Image at top, text at bottom */
+    row-gap: 30rem;
+    padding: 4rem 0 2rem;
   }
-  .nav__item {
-    margin: 1rem 0; 
+  .home__data {
+    text-align: center;
   }
-  .nav__link {
-    color: #fff; 
+  .home__img {
+    width: 200px;
+    margin: 0 auto;
+    /* Move image below text */
   }
-  .show .nav__list {
-    display: flex; 
+  .home__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--mb-4);
+    text-align: center;
+  }
+
+  /* About */
+  .about__container {
+    text-align: center;
+  }
+
+  /* Skills */
+  .skills__container {
+    text-align: center;
+  }
+  .skills__data {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .skills__icon {
+    margin-right: 0;
+    margin-bottom: var(--mb-2);
+  }
+  .skills__bar {
+    position: static;
+    width: 100%;
+    height: 0.25rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Work */
+  .work__container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  /* Contact */
+  .contact__form {
+    width: 100%;
   }
 }
