@@ -98,3 +98,21 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved user preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.classList.add(savedTheme);
+    themeToggle.innerHTML = savedTheme === 'dark' ? "<i class='bx bx-sun'></i>" : "<i class='bx bx-moon'></i>";
+}
+
+// Toggle dark mode
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDarkMode = body.classList.contains('dark');
+    themeToggle.innerHTML = isDarkMode ? "<i class='bx bx-sun'></i>" : "<i class='bx bx-moon'></i>";
+    localStorage.setItem('theme', isDarkMode ? 'dark' : '');
+});

@@ -25,6 +25,31 @@
   --z-back: -10;
   --z-fixed: 100;
 }
+/* Dark mode styles */
+body.dark {
+  background-color: hsl(var(--hue-color), 10%, 12%);
+  color: hsl(var(--hue-color), 89%, 96%);
+}
+body.dark .nav__link {
+  color: hsl(var(--hue-color), 89%, 96%);
+}
+body.dark .nav__link:hover::after,
+body.dark .active-link::after {
+  background-color: hsl(var(--hue-color), 89%, 96%);
+}
+body.dark .footer {
+  background-color: hsl(var(--hue-color), 20%, 10%);
+}
+body.dark .footer__icon {
+  color: hsl(var(--hue-color), 89%, 96%);
+}
+body.dark .theme-toggle {
+  color: hsl(var(--hue-color), 89%, 96%);
+}
+body.dark .l-header {
+  background-color: black;
+  color:#fff
+}
 @media screen and (min-width: 1200px) {
   :root {
     --big-font-size: 3.5rem;
@@ -115,7 +140,7 @@ a {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
+  background-color: #fff; /* Black background */
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -556,6 +581,7 @@ color: var(--first-color);
     padding: 2rem;
     background-color: var(--second-color);
     transition: 0.5s;
+    
   }
   .nav__toggle {
     display: block;
@@ -620,4 +646,19 @@ color: var(--first-color);
   .contact__form {
     width: 100%;
   }
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--second-color);
+    margin-left: var(--mb-4);
+    transition: color 0.3s ease;
+}
+.theme-toggle:hover {
+    color: var(--first-color);
+}
+
+
+
 }
